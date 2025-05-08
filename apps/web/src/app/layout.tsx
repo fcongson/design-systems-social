@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export default function RootLayout({
               justifyContent: "space-between",
             }}
           >
-            <a
+            <Link
               href="/"
               style={{
                 fontSize: "var(--font-size-xl)",
@@ -41,14 +42,14 @@ export default function RootLayout({
               }}
             >
               Your Site Name
-            </a>
+            </Link>
             <div style={{ display: "flex", gap: "var(--spacing-md)" }}>
-              <a href="/media" style={{ color: "var(--color-text)" }}>
+              <Link href="/media" style={{ color: "var(--color-text)" }}>
                 Media
-              </a>
-              <a href="/about" style={{ color: "var(--color-text)" }}>
+              </Link>
+              <Link href="/about" style={{ color: "var(--color-text)" }}>
                 About
-              </a>
+              </Link>
             </div>
           </nav>
         </header>

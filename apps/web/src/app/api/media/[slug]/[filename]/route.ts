@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic"; // Make sure the route is dynamically re
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string; filename: string } },
+  { params }: { params: Promise<{ slug: string; filename: string }> },
 ) {
   const { slug, filename } = await params;
 

@@ -15,8 +15,8 @@ export default function MediaIndexPage() {
 
   // Sort posts by publishedAt date (newest first)
   const sortedPosts = [...posts].sort((a, b) => {
-    const dateA = new Date(a.frontmatter.publishedAt).getTime();
-    const dateB = new Date(b.frontmatter.publishedAt).getTime();
+    const dateA = new Date(a?.frontmatter.publishedAt).getTime();
+    const dateB = new Date(b?.frontmatter.publishedAt).getTime();
     return dateB - dateA;
   });
 
@@ -27,13 +27,13 @@ export default function MediaIndexPage() {
       <div className="grid-container">
         {sortedPosts.map((post) => (
           <Link
-            href={`/media/${post.slug}`}
-            key={post.slug}
+            href={`/media/${post?.slug}`}
+            key={post?.slug}
             style={{ textDecoration: "none" }}
           >
             <div className="card">
               <div className="aspect-video">
-                {post.frontmatter.localImages && post.frontmatter.image && (
+                {post?.frontmatter.localImages && post.frontmatter.image && (
                   <Image
                     src={`/media/${post.slug}${post.frontmatter.image.replace(
                       ".",
@@ -48,10 +48,10 @@ export default function MediaIndexPage() {
               </div>
 
               <div className="card-content">
-                <h2 className="mb-2">{post.frontmatter.title}</h2>
+                <h2 className="mb-2">{post?.frontmatter.title}</h2>
 
                 <div className="tags mb-3">
-                  {post.frontmatter.tags?.slice(0, 3).map((tag: string) => (
+                  {post?.frontmatter.tags?.slice(0, 3).map((tag: string) => (
                     <span key={tag} className="tag">
                       {tag}
                     </span>
@@ -60,7 +60,7 @@ export default function MediaIndexPage() {
 
                 <div className="article-meta">
                   <time>
-                    {new Date(post.frontmatter.publishedAt).toLocaleDateString(
+                    {new Date(post?.frontmatter.publishedAt).toLocaleDateString(
                       "en-US",
                       {
                         year: "numeric",
@@ -69,7 +69,7 @@ export default function MediaIndexPage() {
                       },
                     )}
                   </time>
-                  {post.frontmatter.duration && (
+                  {post?.frontmatter.duration && (
                     <span>{post.frontmatter.duration}</span>
                   )}
                 </div>

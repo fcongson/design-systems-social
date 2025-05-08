@@ -14,14 +14,14 @@ export async function generateStaticParams() {
   const posts = getAllPosts();
 
   return posts.map((post) => ({
-    slug: post.slug,
+    slug: post?.slug,
   }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const post = getPostBySlug((await params).slug);
 
@@ -45,7 +45,7 @@ export async function generateMetadata({
 export default async function MediaPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const post = getPostBySlug((await params).slug);
 

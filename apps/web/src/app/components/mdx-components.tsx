@@ -10,7 +10,7 @@ export function createMDXComponents(
     img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
       const src = props.src;
 
-      if (!src) return null;
+      if (!src || typeof src !== "string") return null;
 
       // Handle relative paths in MDX content
       const imageSrc = src.startsWith("./")
