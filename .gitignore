@@ -137,3 +137,6 @@ dist
 
 # Turborepo cache
 .turbo/
+
+# macOS
+.DS_Store
