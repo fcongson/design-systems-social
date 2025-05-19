@@ -23,7 +23,7 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="container py-10">
+    <div className="container">
       <h1>Sign in with Magic Link</h1>
       {sent ? (
         <p>Check your email for a magic link to sign in.</p>

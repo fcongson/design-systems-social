@@ -21,7 +21,7 @@ export default function MediaIndexPage() {
   });
 
   return (
-    <div className="container py-10">
+    <div className="container">
       <h1>Media Library</h1>
 
       <div className="grid-container">
@@ -48,9 +48,9 @@ export default function MediaIndexPage() {
               </div>
 
               <div className="card-content">
-                <h2 className="mb-2">{post?.frontmatter.title}</h2>
+                <h2>{post?.frontmatter.title}</h2>
 
-                <div className="tags mb-3">
+                <div className="tags">
                   {post?.frontmatter.tags?.slice(0, 3).map((tag: string) => (
                     <span key={tag} className="tag">
                       {tag}

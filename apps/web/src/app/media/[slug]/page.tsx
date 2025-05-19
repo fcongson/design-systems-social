@@ -56,13 +56,13 @@ export default async function MediaPage({
   const { frontmatter, content, slug } = post;
 
   return (
-    <div className="container py-10">
+    <div className="container">
       <article className="article">
-        <header className="mb-8">
-          <h1 className="mb-4">{frontmatter.title}</h1>
+        <header>
+          <h1>{frontmatter.title}</h1>
 
           {frontmatter.localImages && frontmatter.poster && (
-            <div className="aspect-video mb-6">
+            <div className="aspect-video">
               <Image
                 src={`/media/${slug}${frontmatter.poster.replace(".", "")}`}
                 alt={frontmatter.title}
@@ -77,7 +77,7 @@ export default async function MediaPage({
             </div>
           )}
 
-          <div className="tags mb-4">
+          <div className="tags">
             {frontmatter.tags?.map((tag: string) => (
               <span key={tag} className="tag">
                 {tag}
@@ -97,7 +97,7 @@ export default async function MediaPage({
           </div>
 
           {frontmatter.videoUrl && (
-            <div className="mt-6">
+            <div>
               <a
                 href={frontmatter.videoUrl}
                 target="_blank"
@@ -124,8 +124,8 @@ export default async function MediaPage({
         </div>
 
         {frontmatter.speakers && frontmatter.speakers.length > 0 && (
-          <div className="mt-10 pt-6 border-t">
-            <h2 className="mb-2">Speakers</h2>
+          <div className="speakers">
+            <h2>Speakers</h2>
             <ul>
               {frontmatter.speakers.map((speaker: string) => (
                 <li key={speaker}>{speaker}</li>
