@@ -1,7 +1,7 @@
 import fs from "fs";
 import { NextRequest } from "next/server";
 import path from "path";
-import { slugToDir } from "../../../../../lib/mdx-utils";
+import { slugToDir } from "../../../../../lib/mdxUtils";
 
 export const dynamic = "force-dynamic"; // Make sure the route is dynamically regenerated
 

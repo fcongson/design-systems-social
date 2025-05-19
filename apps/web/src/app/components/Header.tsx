@@ -43,7 +43,7 @@ export const Header = () => {
             color: "var(--color-text)",
           }}
         >
-          Your Site Name
+          DesignSystems.social
         </Link>
         <div style={{ display: "flex", gap: "var(--spacing-md)" }}>
           <Link href="/media" style={{ color: "var(--color-text)" }}>

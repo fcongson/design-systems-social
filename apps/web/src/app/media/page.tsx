@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllPosts } from "../../lib/mdx-utils";
+import { getAllPosts } from "../../lib/mdxUtils";
 
 export const dynamic = "force-static"; // Ensure static generation
 export const revalidate = 3600; // Revalidate every hour

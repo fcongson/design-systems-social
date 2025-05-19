@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { AuthProvider } from "./components/AuthContext";
-import "./globals.css";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Your Site Name",
-    default: "Your Site Name",
+    template: "%s | DesignSystems.social",
+    default: "DesignSystems.social",
   },
-  description: "Your site description",
+  description: "The Design Systems Community",
 };
 
 export default function RootLayout({
@@ -22,21 +23,7 @@ export default function RootLayout({
         <body>
           <Header />
           <main>{children}</main>
-          <footer
-            className="container"
-            style={{
-              padding: "var(--spacing-md) 0",
-              marginTop: "var(--spacing-2xl)",
-              borderTop: "1px solid var(--color-border)",
-              color: "var(--color-text-light)",
-              textAlign: "center",
-            }}
-          >
-            <p>
-              &copy; {new Date().getFullYear()} Your Site Name. All rights
-              reserved.
-            </p>
-          </footer>
+          <Footer />
         </body>
       </html>
     </AuthProvider>

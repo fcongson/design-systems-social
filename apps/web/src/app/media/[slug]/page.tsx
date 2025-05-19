@@ -3,8 +3,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import { getAllPosts, getPostBySlug } from "../../../lib/mdx-utils";
-import { createMDXComponents } from "../../components/mdx-components";
+import { getAllPosts, getPostBySlug } from "../../../lib/mdxUtils";
+import { createMDXComponents } from "../../components/MDXComponents";
 
 export const dynamic = "force-static"; // Ensure static generation
 export const revalidate = 3600; // Revalidate every hour
