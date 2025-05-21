@@ -7,9 +7,10 @@
   ],
   "scripts": {
     "dev": "turbo run dev --filter=web",
-    "build": "turbo run build",
-    "lint": "turbo run lint",
-    "clean": "rimraf ./packages/*/node_modules && rimraf ./apps/*/node_modules && rimraf pnpm-lock.yaml && rimraf ./node_modules"
+    "build": "turbo run build --filter=web",
+    "lint": "turbo run lint --filter=web",
+    "clean": "rimraf ./packages/*/node_modules && rimraf ./apps/*/node_modules && rimraf pnpm-lock.yaml && rimraf ./node_modules",
+    "aggregate:video": "pnpm --filter video-aggregator exec node index.js"
   },
   "devDependencies": {
     "@types/node": "^22.15.14",
